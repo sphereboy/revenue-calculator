@@ -1,9 +1,13 @@
 import RevenueCalculator from "@/components/revenue-calculator-interactive";
+import UnderwaterBackground from "@/components/underwater-background";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full flex items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-purple-50">
-      <RevenueCalculator />
-    </main>
+    <div className="relative w-screen h-screen overflow-hidden">
+      <UnderwaterBackground />
+      <main className="relative h-full w-full flex items-center justify-center p-4 z-10">
+        <RevenueCalculator />
+      </main>
+    </div>
   );
 }

@@ -64,7 +64,7 @@ const RevenueCalculator = () => {
   };
 
   return (
-    <Card className="w-full max-w-2xl shadow-lg border-0 bg-white/70 backdrop-blur-sm">
+    <Card className="w-full max-w-2xl shadow-lg border-0 bg-white/90 backdrop-blur-md">
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Revenue Share Calculator
