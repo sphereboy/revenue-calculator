@@ -64,65 +64,75 @@ const RevenueCalculator = () => {
   };
 
   return (
-    <Card className="w-full max-w-2xl">
-      <CardHeader>
-        <CardTitle>Revenue Share Calculator</CardTitle>
+    <Card className="w-full max-w-2xl shadow-lg border-0 bg-white/70 backdrop-blur-sm">
+      <CardHeader className="space-y-1">
+        <CardTitle className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Revenue Share Calculator
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
           {/* Input Controls */}
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-2">
-              <label className="text-sm font-medium">Sale Price</label>
+              <label className="text-sm font-medium text-gray-700">
+                Sale Price
+              </label>
               <div className="relative">
-                <span className="absolute left-3 top-2.5 text-muted-foreground">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
                   $
                 </span>
                 <Input
                   type="number"
                   value={salePrice}
                   onChange={(e) => setSalePrice(Number(e.target.value))}
-                  className="pl-6"
+                  className="pl-6 h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
                   min="0"
                   step="0.01"
                 />
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium">Production Cost</label>
+              <label className="text-sm font-medium text-gray-700">
+                Production Cost
+              </label>
               <div className="relative">
-                <span className="absolute left-3 top-2.5 text-muted-foreground">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
                   $
                 </span>
                 <Input
                   type="number"
                   value={productionCost}
                   onChange={(e) => setProductionCost(Number(e.target.value))}
-                  className="pl-6"
+                  className="pl-6 h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
                   min="0"
                   step="0.01"
                 />
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium">Artist Share</label>
+              <label className="text-sm font-medium text-gray-700">
+                Artist Share
+              </label>
               <div className="relative">
                 <Input
                   type="number"
                   value={artistShare}
                   onChange={(e) => setArtistShare(Number(e.target.value))}
-                  className="pr-8"
+                  className="pr-8 h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
                   min="0"
                   max="100"
                   step="1"
                 />
-                <span className="absolute right-3 top-2.5 text-muted-foreground">
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
                   %
                 </span>
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium">Agency Fee</label>
+              <label className="text-sm font-medium text-gray-700">
+                Agency Fee
+              </label>
               <div className="relative">
                 <Input
                   type="number"
@@ -130,12 +140,12 @@ const RevenueCalculator = () => {
                   onChange={(e) =>
                     setAgencyFeePercentage(Number(e.target.value))
                   }
-                  className="pr-8"
+                  className="pr-8 h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
                   min="0"
                   max="100"
                   step="1"
                 />
-                <span className="absolute right-3 top-2.5 text-muted-foreground">
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
                   %
                 </span>
               </div>
@@ -143,9 +153,11 @@ const RevenueCalculator = () => {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium">Payment Processor</label>
+            <label className="text-sm font-medium text-gray-700">
+              Payment Processor
+            </label>
             <Select value={processor} onValueChange={setProcessor}>
-              <SelectTrigger>
+              <SelectTrigger className="h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -160,40 +172,48 @@ const RevenueCalculator = () => {
           </div>
 
           {/* Results */}
-          <div className="mt-6 space-y-4">
-            <h3 className="text-lg font-semibold">Breakdown</h3>
-            <div className="grid gap-2">
-              <div className="flex justify-between">
+          <div className="mt-8 space-y-4">
+            <h3 className="text-lg font-semibold text-gray-800">Breakdown</h3>
+            <div className="grid gap-3 p-4 rounded-lg bg-gray-50">
+              <div className="flex justify-between text-gray-600">
                 <span>Processing Fee:</span>
-                <span>{formatCurrency(processingFee)}</span>
+                <span className="font-medium">
+                  {formatCurrency(processingFee)}
+                </span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between text-gray-600">
                 <span>Production Cost:</span>
-                <span>{formatCurrency(productionCost)}</span>
+                <span className="font-medium">
+                  {formatCurrency(productionCost)}
+                </span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between text-gray-600">
                 <span>Agency Fee:</span>
-                <span>{formatCurrency(agencyFee)}</span>
+                <span className="font-medium">{formatCurrency(agencyFee)}</span>
               </div>
-              <div className="flex justify-between font-medium">
+              <div className="flex justify-between text-gray-800 font-medium border-t border-gray-200 pt-3">
                 <span>Total Costs:</span>
                 <span>{formatCurrency(totalCosts)}</span>
               </div>
-              <div className="my-2 border-t pt-2">
-                <div className="flex justify-between font-medium">
-                  <span>Net Profit:</span>
-                  <span>{formatCurrency(netProfit)}</span>
-                </div>
+              <div className="flex justify-between text-gray-800 font-medium border-t border-gray-200 pt-3">
+                <span>Net Profit:</span>
+                <span>{formatCurrency(netProfit)}</span>
               </div>
-              <div className="flex justify-between text-green-600">
-                <span>Artist Amount ({formatPercentage(artistShare)}):</span>
-                <span>{formatCurrency(artistAmount)}</span>
+              <div className="flex justify-between font-medium bg-gradient-to-r from-green-50 to-green-100 p-2 rounded">
+                <span className="text-green-700">
+                  Artist Amount ({formatPercentage(artistShare)}):
+                </span>
+                <span className="text-green-700">
+                  {formatCurrency(artistAmount)}
+                </span>
               </div>
-              <div className="flex justify-between text-blue-600">
-                <span>
+              <div className="flex justify-between font-medium bg-gradient-to-r from-blue-50 to-blue-100 p-2 rounded">
+                <span className="text-blue-700">
                   Platform Amount ({formatPercentage(100 - artistShare)}):
                 </span>
-                <span>{formatCurrency(platformAmount)}</span>
+                <span className="text-blue-700">
+                  {formatCurrency(platformAmount)}
+                </span>
               </div>
             </div>
           </div>
