@@ -88,7 +88,7 @@ const RevenueCalculator = () => {
                   onChange={(e) => setSalePrice(Number(e.target.value))}
                   className="pl-6 h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
                   min="0"
-                  step="0.01"
+                  step="1"
                 />
               </div>
             </div>
@@ -106,7 +106,7 @@ const RevenueCalculator = () => {
                   onChange={(e) => setProductionCost(Number(e.target.value))}
                   className="pl-6 h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
                   min="0"
-                  step="0.01"
+                  step="1"
                 />
               </div>
             </div>
