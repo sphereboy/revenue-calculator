@@ -2,7 +2,29 @@ import RevenueCalculator from "@/components/revenue-calculator-interactive";
 import UnderwaterBackground from "@/components/underwater-background";
 import LuckyFish from "@/components/lucky-fish";
 import { Toaster } from "sonner";
-import Image from "next/image";
+
+const badges = [
+  {
+    href: "https://nextjs.org",
+    src: "https://img.shields.io/badge/Next.js-14-black?style=flat&logo=next.js",
+    alt: "Next.js",
+  },
+  {
+    href: "https://www.typescriptlang.org/",
+    src: "https://img.shields.io/badge/TypeScript-5-blue?style=flat&logo=typescript",
+    alt: "TypeScript",
+  },
+  {
+    href: "https://tailwindcss.com",
+    src: "https://img.shields.io/badge/Tailwind-3-38bdf8?style=flat&logo=tailwindcss",
+    alt: "Tailwind",
+  },
+  {
+    href: "https://www.framer.com/motion/",
+    src: "https://img.shields.io/badge/Framer_Motion-✨-ff69b4?style=flat&logo=framer",
+    alt: "Framer Motion",
+  },
+];
 
 export default function Home() {
   return (
@@ -18,46 +40,19 @@ export default function Home() {
         {/* Footer */}
         <footer className="fixed bottom-0 w-full py-4 px-6 flex flex-col items-center justify-center gap-2 bg-white/80 backdrop-blur-sm">
           <div className="flex gap-2 flex-wrap justify-center">
-            <a
-              href="https://nextjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://img.shields.io/badge/Next.js-14-black?style=flat&logo=next.js"
-                alt="Next.js"
-              />
-            </a>
-            <a
-              href="https://www.typescriptlang.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://img.shields.io/badge/TypeScript-5-blue?style=flat&logo=typescript"
-                alt="TypeScript"
-              />
-            </a>
-            <a
-              href="https://tailwindcss.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://img.shields.io/badge/Tailwind-3-38bdf8?style=flat&logo=tailwindcss"
-                alt="Tailwind"
-              />
-            </a>
-            <a
-              href="https://www.framer.com/motion/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://img.shields.io/badge/Framer_Motion-✨-ff69b4?style=flat&logo=framer"
-                alt="Framer Motion"
-              />
-            </a>
+            {badges.map((badge) => (
+              <a
+                key={badge.alt}
+                href={badge.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                {/* Using img for badges is acceptable as they're SVGs */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={badge.src} alt={badge.alt} />
+              </a>
+            ))}
           </div>
           <div className="text-sm text-gray-600 flex items-center gap-2">
             Created by{" "}
