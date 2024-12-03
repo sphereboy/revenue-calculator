@@ -1,8 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧮 Revenue Calculator
 
-## Getting Started
+A snazzy revenue calculator that helps you split those sweet, sweet dollars between artists, platforms, and everyone in between! Built with Next.js 14, TypeScript, and sprinkled with some fancy gradients ✨
 
-First, run the development server:
+## 🌟 Features
+
+- Calculate revenue splits with style
+- Real-time calculations (because waiting is so last century)
+- Support for multiple payment processors (Stripe, PayPal, Square, Shopify)
+- Gorgeous UI with smooth gradients and glass-morphism
+- Fully responsive (works on everything from your phone to your smart fridge)
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Components**: Shadcn/ui
+- **Development**: React Server Components
+
+## 🏃‍♂️ Running Locally
+
+1. Clone this bad boy:
+
+```bash
+git clone https://github.com/yourusername/revenue-calculator.git
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Fire it up:
 
 ```bash
 npm run dev
@@ -10,27 +44,38 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) and watch the magic happen ✨
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Want to make it your own? Here are some quick customization points:
 
-## Learn More
+- Modify the gradient colors in `page.tsx`
+- Add more payment processors in `revenue-calculator-interactive.tsx`
+- Adjust the fee calculations to match your business model
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Enter the sale price
+2. Set the production cost
+3. Adjust the artist share percentage
+4. Choose your payment processor
+5. Watch as the calculator does its thing!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
+Got ideas? Found a bug? Want to make this calculator even more awesome? Pull requests are welcome!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📜 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT - Because sharing is caring!
+
+## 🙏 Credits
+
+Built with love and caffeine by [Your Name]
+
+---
+
+_Remember: Money can't buy happiness, but this calculator can help you split it fairly! 💰_
